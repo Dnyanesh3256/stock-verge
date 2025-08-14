@@ -1,16 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom">
       <div className="container p-2">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img
             src="media/images/logoStockVerge.svg"
             alt="Logo"
             style={{ width: "40%" }}
           />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,30 +26,30 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {/* This ul will be pushed to the right */}
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+            <li className="nav-item me-4">
+              <Link className="nav-link active" aria-current="page" to="/signup">
                 Signup
-              </a>
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link active" href="#">
+            <li className="nav-item me-4">
+              <Link className="nav-link active" to="/about">
                 About
-              </a>
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link active" href="#">
+            <li className="nav-item me-4">
+              <Link className="nav-link active" to="/products">
                 Products
-              </a>
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link active" href="#">
+            <li className="nav-item me-4">
+              <Link className="nav-link active" to="/pricing">
                 Pricing
-              </a>
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link active" href="#">
+            <li className="nav-item me-4">
+              <Link className="nav-link active" to="/about">
                 About
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
