@@ -11,7 +11,7 @@ function LeftSectionImage({
   appStore,
 }) {
   return (
-    <div className="container py-5 border-top" style={{padding: "0%"}}>
+    <div className="container py-5" style={{padding: "0%"}}>
       <div className="row align-items-center">
         <div className="col-lg-7 col-md-6 text-center">
           <img src={imageUrl} alt="" className="img-fluid" style={{ maxHeight: "500px", marginRight: "10px" }} />

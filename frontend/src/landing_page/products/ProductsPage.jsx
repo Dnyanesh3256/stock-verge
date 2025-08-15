@@ -6,11 +6,13 @@ import RightSectionImage from "./RightSectionImage";
 
 import Navbar from "../Navbar";
 import Footer from "../Footer";
+import { Link } from "react-router-dom";
 
 function ProductsPage() {
   return (
     <>
       <Hero />
+
       <LeftSectionImage
         imageUrl="media/images/kite.png"
         productName="Kite"
@@ -20,7 +22,13 @@ function ProductsPage() {
         googlePlay=""
         appStore=""
       />
-      <RightSectionImage />
+
+      <RightSectionImage
+        productName="Console"
+        productDescription="The central dashboard for your StockVerge account. Gain insights into your trades and investments with in-depth reports and visualisations."
+        imageUrl="media/images/console.png"
+      />
+
       <LeftSectionImage
         imageUrl="media/images/coin.png"
         productName="Coin"
@@ -30,7 +38,13 @@ function ProductsPage() {
         googlePlay=""
         appStore=""
       />
-      <RightSectionImage />
+
+      <RightSectionImage
+        productName="Kite Connect API"
+        productDescription="Build powerful trading platforms and experiences with our super simple HTTP/JSON APIs. If you are a startup, build your investment app and showcase it to our clientbase."
+        imageUrl="media/images/kite.png"
+      />
+
       <LeftSectionImage
         imageUrl="media/images/varsity.png"
         productName="Varsity mobile"
@@ -40,6 +54,12 @@ function ProductsPage() {
         googlePlay=""
         appStore=""
       />
+
+      <p className="text-center fs-5 p-1">
+        Want to know more about our technology stack? Check out the
+        <Link style={{ textDecoration: "none" }}> StockVerge.tech </Link> blog.
+      </p>
+
       <Universe />
     </>
   );
