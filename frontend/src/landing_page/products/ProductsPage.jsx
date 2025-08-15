@@ -55,7 +55,7 @@ function ProductsPage() {
         appStore=""
       />
 
-      <p className="text-center fs-5 p-1">
+      <p className="text-center text-muted fs-5 p-1 mt-5" style={{marginBottom: "100px"}}>
         Want to know more about our technology stack? Check out the
         <Link style={{ textDecoration: "none" }}> StockVerge.tech </Link> blog.
       </p>

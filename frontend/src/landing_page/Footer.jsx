@@ -5,7 +5,7 @@ function Footer() {
     <footer style={{ backgroundColor: "rgb(250, 250, 250)" }}>
       <div className="container border-top mt-5">
         <div className="row mt-5">
-          <div className="col mb-4">
+          <div className="col-3 mb-4">
             <img
               src="media/images/logoStockVerge.svg"
               alt="Logo"
@@ -15,57 +15,55 @@ function Footer() {
               &copy; 2025, Stock-Verge broking Ltd. All rights reserved.
             </p>
           </div>
-          <div className="col">
-            <div>
-              <p>Company</p>
-              <ul
-                className="list-unstyled"
-                style={{ fontSize: "16px", lineHeight: "35px" }}
-              >
-                <li>
-                  <a href="#" className="text-decoration-none text-muted">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-decoration-none text-muted">
-                    Products
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-decoration-none text-muted">
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-decoration-none text-muted">
-                    Referral programme
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-decoration-none text-muted">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-decoration-none text-muted">
-                    StockVerge.tech
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-decoration-none text-muted">
-                    Press and media
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-decoration-none text-muted">
-                    StockVerge cares (CSR)
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <div className="col-3">
+            <p>Company</p>
+            <ul
+              className="list-unstyled"
+              style={{ fontSize: "16px", lineHeight: "35px" }}
+            >
+              <li>
+                <a href="#" className="text-decoration-none text-muted">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-decoration-none text-muted">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-decoration-none text-muted">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-decoration-none text-muted">
+                  Referral programme
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-decoration-none text-muted">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-decoration-none text-muted">
+                  StockVerge.tech
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-decoration-none text-muted">
+                  Press and media
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-decoration-none text-muted">
+                  StockVerge cares (CSR)
+                </a>
+              </li>
+            </ul>
           </div>
-          <div className="col">
+          <div className="col-3">
             <p>Support</p>
             <ul
               className="list-unstyled"
@@ -98,7 +96,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col">
+          <div className="col-3">
             <p>Account</p>
             <ul
               className="list-unstyled"
