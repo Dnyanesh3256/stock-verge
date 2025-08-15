@@ -7,7 +7,7 @@ function OpenAccount() {
                 <div className="col">
                     <h1 className='mt-5'>Open a Stock-Verge account</h1>
                     <p>Modern platforms and apps, &#8377;0 investments, and flat &#8377;20 intraday and F&O trades.</p>
-                    <button className='p-2 btn btn-primary fs-5 mb-5' style={{width: "20%"}}>Sigup now</button>
+                    <button className='p-2 btn btn-primary fs-5 mb-5' style={{width: "20%"}}>Signup now</button>
                 </div>
             </div>
         </div>
