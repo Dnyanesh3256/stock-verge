@@ -18,24 +18,42 @@
 import React, { useState } from "react";
 
 import BuyActionWindow from "./BuyActionWindow";
+import SellActionWindow from "./SellActionWindow"; // 🔴 Import Sell Window
 
 const GeneralContext = React.createContext({
   openBuyWindow: (uid) => {},
   closeBuyWindow: () => {},
+  openSellWindow: (uid) => {}, // 🔴 Add Sell
+  closeSellWindow: () => {},  // 🔴 Add Sell
 });
 
 export const GeneralContextProvider = (props) => {
   const [isBuyWindowOpen, setIsBuyWindowOpen] = useState(false);
-  const [selectedStockUID, setSelectedStockUID] = useState("");
+  const [selectedBuyStockUID, setSelectedBuyStockUID] = useState("");
 
+  const [isSellWindowOpen, setIsSellWindowOpen] = useState(false); // 🔴 New state
+  const [selectedSellStockUID, setSelectedSellStockUID] = useState(""); // 🔴 New state
+
+  // --- Buy handlers ---
   const handleOpenBuyWindow = (uid) => {
     setIsBuyWindowOpen(true);
-    setSelectedStockUID(uid);
+    setSelectedBuyStockUID(uid);
   };
 
   const handleCloseBuyWindow = () => {
     setIsBuyWindowOpen(false);
-    setSelectedStockUID("");
+    setSelectedBuyStockUID("");
+  };
+
+  // --- Sell handlers ---
+  const handleOpenSellWindow = (uid) => {
+    setIsSellWindowOpen(true);
+    setSelectedSellStockUID(uid);
+  };
+
+  const handleCloseSellWindow = () => {
+    setIsSellWindowOpen(false);
+    setSelectedSellStockUID("");
   };
 
   return (
@@ -43,10 +61,15 @@ export const GeneralContextProvider = (props) => {
       value={{
         openBuyWindow: handleOpenBuyWindow,
         closeBuyWindow: handleCloseBuyWindow,
+        openSellWindow: handleOpenSellWindow,   // 🔴 Expose sell
+        closeSellWindow: handleCloseSellWindow, // 🔴 Expose sell
       }}
     >
       {props.children}
-      {isBuyWindowOpen && <BuyActionWindow uid={selectedStockUID} />}
+
+      {/* Conditionally render Buy/Sell windows */}
+      {isBuyWindowOpen && <BuyActionWindow uid={selectedBuyStockUID} />}
+      {isSellWindowOpen && <SellActionWindow uid={selectedSellStockUID} />}
     </GeneralContext.Provider>
   );
 };

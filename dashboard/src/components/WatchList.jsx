@@ -113,7 +113,6 @@
 
 
 
-
 import React, { useState, useContext } from "react";
 
 import GeneralContext from "./GeneralContext";
@@ -157,11 +156,11 @@ export default WatchList;
 const WatchListItem = ({ stock }) => {
   const [showWatchlistActions, setShowWatchlistActions] = useState(false);
 
-  const handleMouseEnter = (e) => {
+  const handleMouseEnter = () => {
     setShowWatchlistActions(true);
   };
 
-  const handleMouseLeave = (e) => {
+  const handleMouseLeave = () => {
     setShowWatchlistActions(false);
   };
 
@@ -174,7 +173,7 @@ const WatchListItem = ({ stock }) => {
           {stock.isDown ? (
             <KeyboardArrowDown className="down" />
           ) : (
-            <KeyboardArrowUp className="down" />
+            <KeyboardArrowUp className="up" />
           )}
           <span className="price">{stock.price}</span>
         </div>
@@ -191,6 +190,10 @@ const WatchListActions = ({ uid }) => {
     generalContext.openBuyWindow(uid);
   };
 
+  const handleSellClick = () => {
+    generalContext.openSellWindow(uid);
+  };
+
   return (
     <span className="actions">
       <span>
@@ -199,18 +202,23 @@ const WatchListActions = ({ uid }) => {
           placement="top"
           arrow
           TransitionComponent={Grow}
-          onClick={handleBuyClick}
         >
-          <button className="buy">Buy</button>
+          <button className="buy" onClick={handleBuyClick}>
+            Buy
+          </button>
         </Tooltip>
+
         <Tooltip
           title="Sell (S)"
           placement="top"
           arrow
           TransitionComponent={Grow}
         >
-          <button className="sell">Sell</button>
+          <button className="sell" onClick={handleSellClick}>
+            Sell
+          </button>
         </Tooltip>
+
         <Tooltip
           title="Analytics (A)"
           placement="top"
@@ -221,6 +229,7 @@ const WatchListActions = ({ uid }) => {
             <BarChartOutlined className="icon" />
           </button>
         </Tooltip>
+
         <Tooltip title="More" placement="top" arrow TransitionComponent={Grow}>
           <button className="action">
             <MoreHoriz className="icon" />
