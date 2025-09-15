@@ -1,20 +1,17 @@
 import React from "react";
-
 import Menu from "./Menu";
 
 const TopBar = () => {
   return (
-    <div className="topbar-container">
-      <div className="indices-container">
-        <div className="nifty">
-          <p className="index">NIFTY 50</p>
-          <p className="index-points">{100.2} </p>
-          <p className="percent"> </p>
+    <div className="topbar-container d-flex justify-content-between align-items-center px-3 py-2 bg-dark text-white">
+      <div className="indices-container d-flex">
+        <div className="nifty me-4 text-center">
+          <p className="index mb-0">NIFTY 50</p>
+          <p className="index-points mb-0">{100.2}</p>
         </div>
-        <div className="sensex">
-          <p className="index">SENSEX</p>
-          <p className="index-points">{100.2}</p>
-          <p className="percent"></p>
+        <div className="sensex text-center">
+          <p className="index mb-0">SENSEX</p>
+          <p className="index-points mb-0">{100.2}</p>
         </div>
       </div>
 

@@ -9,13 +9,19 @@ const HoldingsModel = require("./model/HoldingsModel");
 const PositionsModel = require("./model/PositionsModel");
 const OrdersModel = require("./model/OrdersModel");
 
+const { router: authRoutes, authMiddleware } = require("./auth");
+
 const PORT = process.env.PORT || 3002;
 const url = process.env.MONGO_URL;
 
 const app = express();
 
+app.use(express.json());
+
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use("/auth", authRoutes);
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
@@ -190,17 +196,17 @@ app.use(bodyParser.json());
 //   res.send("Positions added!");
 // });
 
-app.get("/allHoldings", async (req, res) => {
+app.get("/allHoldings", authMiddleware, async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
   res.json(allHoldings);
 });
 
-app.get("/allPositions", async (req, res) => {
+app.get("/allPositions", authMiddleware, async (req, res) => {
   let allPositions = await PositionsModel.find({});
   res.json(allPositions);
 });
 
-app.post("/buyOrder", async (req, res) => {
+app.post("/buyOrder", authMiddleware, async (req, res) => {
   let newOrder = new OrdersModel({
     name: req.body.name,
     qty: req.body.qty,
@@ -213,7 +219,7 @@ app.post("/buyOrder", async (req, res) => {
   res.send("New order saved!");
 });
 
-app.post("/sellOrder", async (req, res) => {
+app.post("/sellOrder", authMiddleware, async (req, res) => {
   try {
     let newOrder = new OrdersModel({
       name: req.body.name,
