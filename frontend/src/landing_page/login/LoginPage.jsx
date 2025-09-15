@@ -25,11 +25,46 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button onClick={handleLogin}>Login</button>
+    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: "80vh" }}>
+      <div className="card shadow p-4 col-9 col-md-8 col-lg-6" style={{ borderRadius: "10px" }}>
+        <h2 className="text-center mb-4">Login</h2>
+
+        <div className="mb-3">
+          <label className="form-label">Username</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Password</label>
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Enter password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+
+        <button
+          className="btn btn-primary w-100 mb-3"
+          onClick={handleLogin}
+        >
+          Login
+        </button>
+
+        <button
+          className="btn btn-outline-secondary w-100"
+          onClick={() => navigate("/signup")}
+        >
+          Don't have an account? Register
+        </button>
+      </div>
     </div>
   );
 };
