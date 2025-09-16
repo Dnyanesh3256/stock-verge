@@ -12,7 +12,7 @@ const BuyActionWindow = ({ uid }) => {
   const [stockPrice, setStockPrice] = useState(0.0);
 
   const handleBuyClick = () => {
-    axios.post("http://localhost:3002/buyOrder", {
+    axios.post("https://stock-verge-backend.onrender.com/buyOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,

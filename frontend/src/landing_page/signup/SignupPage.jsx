@@ -9,7 +9,7 @@ const Register = () => {
 
   const handleRegister = async () => {
     try {
-      await axios.post("http://localhost:3002/auth/signup", { username, password });
+      await axios.post("https://stock-verge-backend.onrender.com/auth/signup", { username, password });
       alert("User registered!");
       setUsername("");
       setPassword("");
