@@ -5,7 +5,7 @@ const Dashboard = () => {
   return (
     <div style={{ padding: "20px" }}>
       <iframe
-        src="http://localhost:5174"
+        src="https://stock-verge-dashboard.onrender.com"
         title="Dashboard App"
         style={{
           width: "100%",
