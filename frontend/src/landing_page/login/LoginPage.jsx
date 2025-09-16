@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:3002/auth/login", {
+      const res = await axios.post("https://stock-verge-backend.onrender.com/auth/login", {
         username,
         password,
       });
